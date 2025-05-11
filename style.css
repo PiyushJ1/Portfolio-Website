@@ -3,15 +3,17 @@ body {
 }
 
 .navbar-buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    display:flex;
+    justify-content:center;
+    align-items:end;
+    gap: 200px;
+    width: auto;
+    height: auto;
 }
 
 .github-button{
     background: none;
-    border: none;
+    border: white;
     padding: 0;
     cursor: pointer;
     width: 50px;
@@ -20,7 +22,16 @@ body {
 
 .linkedin-button{
     background: none;
-    border: none;
+    border:rgb(255, 255, 255);
+    padding: 0;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.resume-button{
+    background: none;
+    border:rgb(255, 255, 255);
     padding: 0;
     cursor: pointer;
     width: 50px;
@@ -44,6 +55,17 @@ body {
     white-space: nowrap;
     overflow: hidden;
     animation: typing 2s steps(25) forwards, cursor 1s step-end infinite;
+}
+
+.construction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:  0vh;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: larger;
 }
 
 @keyframes cursor{
