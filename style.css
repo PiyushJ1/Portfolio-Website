@@ -52,6 +52,11 @@ body {
     justify-content: center;
 }
 
+.cons {
+    font-size: 25px;
+    color: white;
+}
+
 .icon {
     width: 24px;
     height: 24px;
