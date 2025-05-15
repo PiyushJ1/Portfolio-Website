@@ -47,12 +47,12 @@ body {
 
 
 .text {
-    font-size: 75px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70px;
+    font-family: 'Courier New', Consolas, '', monospace;
     border-right: 3px solid rgb(255, 255, 255);
     white-space: nowrap;
     overflow: hidden;
-    font-style: normal;
+    font-weight: bold;
     animation: typing 2.1s steps(25) forwards, cursor 1s step-end infinite;
 }
 
