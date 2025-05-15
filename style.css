@@ -67,6 +67,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 90vh;
+    padding: 2rem 0;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -84,8 +85,8 @@ body {
 
 .desc1 {
     font-size: 25px;
-    white-space: normal;  /* so it wraps */
-    border: none;         /* remove typing border */
+    white-space: normal;
+    border: none;
     overflow: visible;
     text-align: left;
     font-family: 'Roboto Mono', monospace;
@@ -96,8 +97,8 @@ body {
 
 .desc2 {
     font-size: 25px;
-    white-space: normal;  /* so it wraps */
-    border: none;         /* remove typing border */
+    white-space: normal;
+    border: none;
     overflow: visible;
     text-align: left;
     font-family: 'Roboto Mono', monospace;;
@@ -140,6 +141,44 @@ body {
 
 .info {
   color: rgb(163, 161, 161);
+}
+
+.scroll-down {
+    display: inline-block;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    color: white;
+    text-decoration: none;
+    animation: fade 1s ease-in forwards 5s, bounce 2s infinite 6s;
+    opacity: 0;
+    transition: transform 0.2s;
+}
+
+.arrow-cont {
+    text-align: center;
+}
+
+.scroll-down img {
+    width: 60px;
+    height: 60px;
+    font-weight: bold;
+}
+
+.scroll-down:hover {
+    transform: translateY(4px);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(8px);
+    }
+    60% {
+        transform: translateY(4px);
+    }
 }
 
 
