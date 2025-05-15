@@ -4,26 +4,52 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     background-repeat: no-repeat;
     background-size: cover;     /* or 'contain' depending on your needs */
     background-position: center;
     background-attachment: fixed; /* optional: keeps background in place while scrolling */
-    /* background-color: rgb(3, 4, 49); */
-    background-color: rgb(17, 16, 16);
+    background-color: rgb(2, 3, 26);
 }
 
 .navbar {
-    background-color: rgb(34, 168, 7);
+    background-color: rgb(15, 69, 139);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
 }
 
-.navbar-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:end;
-    gap: 20px;
+.navbar a {
+    text-decoration-line: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: rgb(251, 196, 0)
+}
+
+.nav-home {
+    list-style: none;
+    height: 32px;
     width: auto;
-    height: auto;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 0.75px white);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 1rem;
+    justify-content: center;
 }
 
 .icon {
@@ -52,29 +78,29 @@ body {
     border-right: 3px solid rgb(255, 255, 255);
     white-space: nowrap;
     overflow: hidden;
-    font-weight: bold;
+    font-weight: 600;
     animation: typing 2.1s steps(25) forwards, cursor 1s step-end infinite;
 }
 
 .desc1 {
-    font-size: 30px;
+    font-size: 25px;
     white-space: normal;  /* so it wraps */
     border: none;         /* remove typing border */
     overflow: visible;
     text-align: left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto Mono', monospace;
     animation: fade 1s ease-out forwards;
     animation-delay: 2.7s;
     opacity: 0;
 }
 
 .desc2 {
-    font-size: 30px;
+    font-size: 25px;
     white-space: normal;  /* so it wraps */
     border: none;         /* remove typing border */
     overflow: visible;
     text-align: left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto Mono', monospace;;
     animation: fade 1s ease-out forwards;
     animation-delay: 3.2s;
     opacity: 0;
@@ -97,7 +123,7 @@ body {
         width: 0;
     }
     to {
-        width: 58.5%;
+        width: 71%;
     }
 }
 
@@ -111,3 +137,9 @@ body {
         transform: translateY(0);
     }
 }
+
+.info {
+  color: rgb(163, 161, 161);
+}
+
+
