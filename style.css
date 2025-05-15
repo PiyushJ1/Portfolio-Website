@@ -1,71 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #010626;
+    background-repeat: no-repeat;
+    background-size: cover;     /* or 'contain' depending on your needs */
+    background-position: center;
+    background-attachment: fixed; /* optional: keeps background in place while scrolling */
+    /* background-color: rgb(3, 4, 49); */
+    background-color: rgb(17, 16, 16);
+}
+
+.navbar {
+    background-color: rgb(34, 168, 7);
 }
 
 .navbar-buttons{
     display:flex;
     justify-content:center;
     align-items:end;
-    gap: 200px;
+    gap: 20px;
     width: auto;
     height: auto;
 }
 
-.github-button{
-    background: none;
-    border: white;
-    padding: 0;
+.icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
+    background: transparent;
+    border: none;
 }
 
-.linkedin-button{
-    background: none;
-    border:rgb(255, 255, 255);
-    padding: 0;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-}
-
-.resume-button{
-    background: none;
-    border:rgb(255, 255, 255);
-    padding: 0;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-}
-
-.container{
+.intro-wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 90vh;
-    text-align: center;
     color: white;
-    font-family: 'Roboto Mono', monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.text{
-    font-size: 4em;
+
+.text {
+    font-size: 75px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-right: 3px solid rgb(255, 255, 255);
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(25) forwards, cursor 1s step-end infinite;
+    font-style: normal;
+    animation: typing 2.1s steps(25) forwards, cursor 1s step-end infinite;
 }
 
-.construction{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:  0vh;
-    text-align: center;
-    color: white;
-    font-family: 'Roboto Mono', monospace;
-    font-size: larger;
+.desc1 {
+    font-size: 30px;
+    white-space: normal;  /* so it wraps */
+    border: none;         /* remove typing border */
+    overflow: visible;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: fade 1s ease-out forwards;
+    animation-delay: 2.7s;
+    opacity: 0;
+}
+
+.desc2 {
+    font-size: 30px;
+    white-space: normal;  /* so it wraps */
+    border: none;         /* remove typing border */
+    overflow: visible;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: fade 1s ease-out forwards;
+    animation-delay: 3.2s;
+    opacity: 0;
 }
 
 @keyframes cursor{
@@ -85,6 +97,17 @@ body {
         width: 0;
     }
     to {
-        width: 23%;
+        width: 58.5%;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
