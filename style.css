@@ -36,13 +36,47 @@ body {
     color: rgb(251, 196, 0)
 }
 
-.nav-home {
+.nav-left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
     list-style: none;
-    height: 32px;
-    width: auto;
-    vertical-align: middle;
+}
+
+.nav-icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
     filter: drop-shadow(0 0 0.75px white);
 }
+
+.nav-icon.github {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* .nav-git {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    height: 32px;
+    width: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-git img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+} */
+
 
 .nav-links {
     display: flex;
@@ -57,14 +91,14 @@ body {
     color: white;
 }
 
-.icon {
+/* .icon {
     width: 24px;
     height: 24px;
     margin: 0 10px;
     cursor: pointer;
     background: transparent;
     border: none;
-}
+} */
 
 .intro-wrapper {
     display: flex;
