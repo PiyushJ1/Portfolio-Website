@@ -14,6 +14,8 @@ body {
     background-position: center;
     background-attachment: fixed; /* optional: keeps background in place while scrolling */
     background-color: rgb(2, 3, 26);
+    overflow: hidden;
+    background: #0a0a23;
 }
 
 .navbar {
@@ -114,8 +116,7 @@ body {
     flex: 1;
 }
 
-input,
-section textarea {
+input {
     font-weight:700;
     font-family: 'Courier New', Consolas, '', monospace;
     width: 100%;
@@ -125,11 +126,21 @@ section textarea {
     font-size: 1rem;
 }
 
+section textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 0.75rem;
+    border: 2.5px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+
 input::placeholder,
 textarea::placeholder {
     font-family: 'Courier New', monospace;
-    color: #8c8989; /* optional: change placeholder color */
-    font-style: italic; /* optional: make it stand out */
+    color: #8c8989;
+    font-style: italic;
 }
 
 textarea {
@@ -147,6 +158,7 @@ button {
     transition: background-color 0.5s ease;
     font-family: 'Courier New', Consolas, '', monospace;
     font-size: 20px;
+    border-color: white;
 }
 
 button:hover {
