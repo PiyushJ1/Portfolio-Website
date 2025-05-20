@@ -44,10 +44,11 @@ body {
 }
 
 .nav-icon {
-    width: 35px;
-    height: 35px;
+    width: auto;
+    height: 32px;
     cursor: pointer;
-    filter: drop-shadow(0 0 0.75px white);
+    filter: drop-shadow(0 0 1.5px white);
+    margin-top: 0.3rem;
 }
 
 .nav-icon.github {
