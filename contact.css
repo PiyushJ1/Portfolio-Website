@@ -82,7 +82,7 @@ body {
 }
 
 .wrapper {
-    background-color: rgb(19, 79, 163);
+    background-color: rgb(15, 69, 139);
     padding: 2rem;
     width: 700px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -91,38 +91,75 @@ body {
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
+    animation: fade 1.5s ease-out backwards;
 }
 
 .wrapper h2 {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
+    color: white;
+    font-family: 'Courier New', Consolas, '', monospace;
+    font-size: 25px;
+    font-weight:bolder;
 }
 
-section input,
+.name {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.first-name,
+.last-name {
+    flex: 1;
+}
+
+input,
 section textarea {
+    font-weight:700;
+    font-family: 'Courier New', Consolas, '', monospace;
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid white;
-    border-radius: 6px;
+    border: 2.5px solid rgb(0, 0, 0);
+    border-radius: 10px;
     font-size: 1rem;
 }
 
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Courier New', monospace;
+    color: #8c8989; /* optional: change placeholder color */
+    font-style: italic; /* optional: make it stand out */
+}
+
 textarea {
-    resize: vertical;
-    height: 50px;
+    resize: none;
+    height: 100px;
 }
 
 button {
     padding: 0.75rem;
-    background-color: grey;
+    background-color: rgb(44, 116, 187);
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
+    font-family: 'Courier New', Consolas, '', monospace;
+    font-size: 20px;
 }
 
 button:hover {
-    background: rgb(251, 196, 0);
+    background: rgb(99, 186, 223);
 }
 
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
