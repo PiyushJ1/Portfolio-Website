@@ -56,28 +56,11 @@ body {
     height: 20px;
 }
 
-
-/* .nav-git {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
-    height: 32px;
-    width: 32px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+.nav-icon.linkedin {
+    margin-left: 0.6rem;
+    width: 20px;
+    height: 20px;
 }
-
-.nav-git img {
-    width: 24px;
-    height: 24px;
-    margin: 0 10px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-} */
-
 
 .nav-links {
     display: flex;
@@ -86,20 +69,6 @@ body {
     padding: 1rem;
     justify-content: center;
 }
-
-.cons {
-    font-size: 25px;
-    color: white;
-}
-
-/* .icon {
-    width: 24px;
-    height: 24px;
-    margin: 0 10px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-} */
 
 .intro-wrapper {
     display: flex;
@@ -111,7 +80,6 @@ body {
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 
 .text {
     font-size: 70px;

@@ -38,12 +38,30 @@ body {
     color: rgb(251, 196, 0)
 }
 
-.nav-home {
+.nav-left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
     list-style: none;
-    height: 32px;
+}
+
+.nav-icon {
     width: auto;
-    vertical-align: middle;
-    filter: drop-shadow(0 0 0.75px white);
+    height: 32px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 1.5px white);
+    margin-top: 0.3rem;
+}
+
+.nav-icon.github {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-icon.linkedin {
+    margin-left: 0.6rem;
+    width: 20px;
+    height: 20px;
 }
 
 .nav-links {
@@ -52,15 +70,6 @@ body {
     list-style: none;
     padding: 1rem;
     justify-content: center;
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    margin: 0 10px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
 }
 
 @media (max-width: 600px) {
@@ -117,13 +126,13 @@ body {
 }
 
 input {
-    font-weight:700;
-    font-family: 'Courier New', Consolas, '', monospace;
+    /* font-weight:700; */
+    font-family: 'Times New Roman', Times, serif;
     width: 100%;
     padding: 0.75rem;
     border: 2.5px solid rgb(0, 0, 0);
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 section textarea {
