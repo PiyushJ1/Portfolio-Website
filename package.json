@@ -16,5 +16,9 @@
     "url": "https://github.com/PiyushJ1/Portfolio/issues"
   },
   "homepage": "https://github.com/PiyushJ1/Portfolio#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
 }
