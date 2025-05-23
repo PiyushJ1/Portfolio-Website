@@ -8,15 +8,20 @@ document.getElementById('send-button').addEventListener('click', async () => {
         message: document.querySelector('textarea[placeholder="Your Message"]').value,
     };
 
-    const res = await fetch('https://portfolio-yepj.onrender.com/send-message', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-    });
+    try {
+        const res = await fetch('https://portfolio-yepj.onrender.com/send-message', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
 
-    if (res.ok) {
-        alert('Message sent!');
-    } else {
-        alert('Failed to send message');
+        if (res.ok) {
+            alert('Message sent!');
+        } else {
+            alert('Failed to send message');
+        }
+    } catch (err) {
+        console.log('error');
+        alert('erorrrrrr');
     }
 });
