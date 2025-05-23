@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const { error } = require('console');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,7 +18,7 @@ app.post('/send-message', async (req, res) => {
 
     try {
         const transporter = nodemailer.createTransport({
-            server: 'gmail',
+            service: 'gmail',
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
