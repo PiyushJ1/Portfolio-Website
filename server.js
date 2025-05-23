@@ -7,11 +7,13 @@ const { prototype } = require('events');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://www.piyushj.dev'
+}));
 app.use(express.json());
 app.use(express.static('public'));
 
-app.post('/contact.html', (req, res) => {
+app.post('/send-message', (req, res) => {
     const data = req.body;
 
     const filePath = path.join(__dirname, 'messages.json');
