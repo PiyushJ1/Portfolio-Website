@@ -10,7 +10,7 @@ document.getElementById('send-button').addEventListener('click', async () => {
     const res = await fetch('https://portfolio-yepj.onrender.com/save-message', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ firstName, lastName, email, message })
+        body: JSON.stringify(data)
     });
 
     if (res.ok) {

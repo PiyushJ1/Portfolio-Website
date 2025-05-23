@@ -1,8 +1,6 @@
 const express = require('express');
-const fs = require('fs');
 const cors = require('cors');
-const path = require('path');
-const { prototype } = require('events');
+const { error } = require('console');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,19 +11,35 @@ app.use(cors({
 app.use(express.json());
 app.use(express.static('public'));
 
-app.post('/send-message', (req, res) => {
-    const data = req.body;
+app.post('/send-message', async (req, res) => {
+    const { firstName, lastName, email, message } = req.body;
 
-    const filePath = path.join(__dirname, 'messages.json');
-    let messages = [];
+    try {
+        const transporter = nodemailer.createTransport({
+            server: 'gmail',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
+            }
+        });
 
-    if (fs.existsSync(filePath)) {
-        messages = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        const mailOptions = {
+            from: email,
+            to: process.env.EMAIL_USER,
+            subject: `Message from ${firstName} ${lastName}`,
+            text: `Email: ${email}\n\nMessage:\n${message}`
+        };
+
+        await transporter.sendMail(mailOptions);
+
+        res.status(200).json({ message: 'Message sent successfully' });
+    } catch (err) {
+        console.error('Error sending email:', err);
+        res.status(500).json({ error: 'Failed to send email' });
     }
-
-    messages.push(data);
-    fs.writeFileSync(filePath, JSON.stringify(messages, null, 2));
-    res.status(200).json({ success: true });
 });
 
-app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server running on PORT ${PORT}`)
+});
+    
