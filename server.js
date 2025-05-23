@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const { error } = require('console');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
