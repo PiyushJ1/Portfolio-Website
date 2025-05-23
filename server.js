@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.post('/send-message', async (req, res) => {
+    console.log('Incoming message:', req.body);
+
     const { firstName, lastName, email, message } = req.body;
 
     try {
