@@ -4,17 +4,32 @@
     box-sizing: border-box;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
 }
 
 body {
     background-repeat: no-repeat;
-    background-size: cover;     /* or 'contain' depending on your needs */
+    background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* optional: keeps background in place while scrolling */
+    background-attachment: fixed;
+    background-color: rgb(2, 3, 26);
+} */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  /* scroll-snap-type: y mandatory; */
+  overflow-y: scroll;
     background-color: rgb(2, 3, 26);
 }
+
+section {
+  scroll-snap-align: start;
+}
+
+
 
 .navbar {
     background-color: rgb(15, 69, 139);
@@ -70,25 +85,35 @@ body {
     justify-content: center;
 }
 
+.intro-section {
+    height: 100vh;
+    background-color: rgb(2, 3, 26);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .intro-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 90vh;
-    padding: 2rem 0;
+    padding: 2rem;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    width: 100%;
 }
 
 .text {
     font-size: 70px;
-    font-family: 'Courier New', Consolas, '', monospace;
+    font-family: 'Courier New', Consolas, monospace;
     border-right: 3px solid rgb(255, 255, 255);
     white-space: nowrap;
     overflow: hidden;
     font-weight: 600;
-    animation: typing 2.1s steps(25) forwards, cursor 1s step-end infinite;
+    animation: typing 2.3s steps(25) forwards, cursor 1s step-end infinite;
+    margin-left: -15rem;
 }
 
 .desc1 {
@@ -96,7 +121,7 @@ body {
     white-space: normal;
     border: none;
     overflow: visible;
-    text-align: left;
+    text-align: center;
     font-family: 'Roboto Mono', monospace;
     animation: fade 1s ease-out forwards;
     animation-delay: 2.7s;
@@ -108,14 +133,15 @@ body {
     white-space: normal;
     border: none;
     overflow: visible;
-    text-align: left;
+    text-align: center;
     font-family: 'Roboto Mono', monospace;;
     animation: fade 1s ease-out forwards;
     animation-delay: 3.2s;
     opacity: 0;
+    margin-right: 10rem;
 }
 
-@keyframes cursor{
+@keyframes cursor {
     0% {
         border-color: rgb(255, 255, 255);
     }
@@ -127,12 +153,12 @@ body {
     }
 }
 
-@keyframes typing{
+@keyframes typing {
     from {
         width: 0;
     }
     to {
-        width: 71%;
+        width: 160%;
     }
 }
 
