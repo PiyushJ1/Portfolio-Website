@@ -11,6 +11,7 @@ html, body {
     scroll-snap-type: y proximity;
     overflow-y: scroll;
     background-color: rgb(2, 3, 26);
+    overflow-x: hidden;
 }
 
 section {
@@ -248,7 +249,10 @@ section {
     color: white;
     font-family: 'Courier New', Consolas, '', monospace;
     font-size: 25px;
-    font-weight:bolder;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .name {
@@ -269,6 +273,7 @@ input {
     border: 2.5px solid rgb(0, 0, 0);
     border-radius: 10px;
     font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 section textarea {
@@ -279,7 +284,6 @@ section textarea {
     border-radius: 10px;
     font-size: 1rem;
 }
-
 
 input::placeholder,
 textarea::placeholder {
@@ -304,6 +308,9 @@ button {
     font-family: 'Courier New', Consolas, '', monospace;
     font-size: 20px;
     border-color: white;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
 button:hover {
@@ -320,3 +327,5 @@ button:hover {
         transform: translateY(0);
     }
 }
+
+
