@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piyush Jha | Home</title>
+    <title>Piyush Jha | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
@@ -70,8 +70,32 @@
     </section>
 
     <section id="contact" style="height: 100vh; background-color: rgb(2, 3, 60); color: white;">
-        <h1>Contact</h1>
-        <p>How to reach me.</p>
+            <main class="container">
+                <div class="wrapper">
+                    <h2>Contact Me</h2>
+                <form action="your-server-endpoint" method="POST">
+                    <div class="name">
+                        <div class="first-name">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        </div>
+
+                        <div class="last-name">
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                        </div>
+                    </div>
+
+                    <div class="email">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="message">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+
+                    <button type="submit" id="send-button">Send Message</button>
+                </form>
+                </div>
+            </main>
     </section>
 
 
