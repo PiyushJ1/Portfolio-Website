@@ -4,32 +4,18 @@
     box-sizing: border-box;
 }
 
-/* html {
-  scroll-behavior: smooth;
-}
-
-body {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: rgb(2, 3, 26);
-} */
-
 html, body {
-  height: 100%;
-  margin: 0;
-  scroll-behavior: smooth;
-  /* scroll-snap-type: y mandatory; */
-  overflow-y: scroll;
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
     background-color: rgb(2, 3, 26);
 }
 
 section {
-  scroll-snap-align: start;
+    scroll-snap-align: start;
 }
-
-
 
 .navbar {
     background-color: rgb(15, 69, 139);
@@ -37,6 +23,12 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar a {
