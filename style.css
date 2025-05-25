@@ -227,7 +227,6 @@ section {
     justify-content: center;
     align-items: center;
     padding: 5rem 1rem;
-    margin-top: 10rem;
 }
 
 .wrapper {
@@ -241,6 +240,7 @@ section {
     gap: 1rem;
     justify-content: center;
     animation: fade 1.5s ease-out backwards;
+    margin-top: 15rem;
 }
 
 .wrapper h2 {
