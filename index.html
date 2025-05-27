@@ -6,98 +6,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piyush Jha | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <nav class="navbar">
         <ul class="nav-left">
             <li>
-                <a href="#home"><img src="assets/favicon.ico" alt="Home" class="nav-icon"></a>
+                <a href="#home" class="logo-link">
+                    <img src="assets/logo.svg" alt="Home" class="nav-icon">
+                </a>
             </li>
-
             <li>
-                <a href="https://www.github.com/PiyushJ1" target="_blank">
+                <a href="https://www.github.com/PiyushJ1" target="_blank" class="social-link">
                     <img src="assets/github-mark-white.png" alt="GitHub" class="nav-icon github">
                 </a>
             </li>
-
             <li>
-                <a href="https://www.linkedin.com/in/piyush-jha1/" target="_blank">
+                <a href="https://www.linkedin.com/in/piyush-jha1/" target="_blank" class="social-link">
                     <img src="assets/linkedin-xxl.png" alt="LinkedIn" class="nav-icon linkedin">
                 </a>
             </li>
         </ul>
 
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>            
+            <li><a href="#about"><span>01.</span>About</a></li>
+            <li><a href="#projects"><span>02.</span>Projects</a></li>
+            <li><a href="#contact"><span>03.</span>Contact</a></li>            
         </ul>
     </nav>
 
     <section id="home" class="intro-section">
-    <div class="intro-wrapper">
-        <div class="intro">
-            <p class="text">Hi! I'm Piyush.</p>
-        </div>
+        <div class="intro-wrapper">
+            <div class="intro">
+                <p class="pre-text">Hi, my name is</p>
+                <h1 class="text glitch">Piyush Jha</h1>
+                <h2 class="post-text">I build things for the web.</h2>
+            </div>
 
-        <div class="desc1">
-            <p class="info">// currently a 2nd year Software Engineering student @ UNSW</p>
-        </div>
+            <div class="desc1 fade-up">
+                <p class="info">// Software Engineering @ UNSW | Building digital solutions</p>
+            </div>
 
-        <div class="desc2">
-            <p class="info">// have a look around and learn more about me :)</p>
-        </div>
+            <div class="desc2 fade-up">
+                <p class="info">// Passionate about clean code and innovative technology</p>
+            </div>
 
-        <div class="arrow-cont">
-            <a href="#about" class="scroll-down">
-                <img src="assets/image 1.png" alt="Scroll Down">
-            </a>
+            <div class="arrow-cont">
+                <a href="#about" class="scroll-down">
+                    <img src="assets/image 1.png" alt="Scroll Down">
+                </a>
+            </div>
         </div>
-    </div>
     </section>
 
-    <section id="about" style="height: 100vh; background-color: rgb(2, 3, 40); color: white;">
-        <h1>About</h1>
-        <p>Some info about me.</p>
+    <section id="about">
+        <h2 class="section-title fade-up">About Me</h2>
+        <div class="about-content">
+            <div class="about-text fade-left">
+                <p>Hello! I'm Piyush, a passionate software engineering student at UNSW with a keen interest in building digital experiences that make a difference.</p>
+                <br>
+                <p>I love exploring new technologies and creating elegant solutions to complex problems. My journey in software development started with simple HTML pages and has evolved into building full-stack applications.</p>
+                <br>
+                <p>Here are a few technologies I've been working with recently:</p>
+                <br>
+                <ul class="skills-list">
+                    <li>JavaScript (ES6+)</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>Git</li>
+                </ul>
+            </div>
+            <div class="about-image fade-right">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face" alt="Piyush Jha">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="projects" style="height: 100vh; background-color: rgb(2, 3, 50); color: white;">
-        <h1>Projects</h1>
-        <p>My work and portfolio.</p>
+    <section id="projects">
+        <h2 class="section-title fade-up">Some Things I've Built</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-up">
+                <div class="project-content">
+                    <div class="project-label">Featured Project</div>
+                    <h3 class="project-title">Project One</h3>
+                    <div class="project-description">
+                        <p>A comprehensive web application that demonstrates modern frontend development practices and responsive design principles.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li class="project-tech-item">React</li>
+                        <li class="project-tech-item">Node.js</li>
+                        <li class="project-tech-item">MongoDB</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-up">
+                <div class="project-content">
+                    <div class="project-label">Featured Project</div>
+                    <h3 class="project-title">Project Two</h3>
+                    <div class="project-description">
+                        <p>An innovative solution that leverages machine learning algorithms to solve real-world problems.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li class="project-tech-item">Python</li>
+                        <li class="project-tech-item">Flask</li>
+                        <li class="project-tech-item">PostgreSQL</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-up">
+                <div class="project-content">
+                    <div class="project-label">Featured Project</div>
+                    <h3 class="project-title">Project Three</h3>
+                    <div class="project-description">
+                        <p>A robust backend system that handles complex business logic and high-performance data processing.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li class="project-tech-item">Java</li>
+                        <li class="project-tech-item">Spring Boot</li>
+                        <li class="project-tech-item">MySQL</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" style="height: 100vh; background-color: rgb(2, 3, 60); color: white;">
-            <main class="container">
-                <div class="wrapper">
-                    <h2>Contact Me</h2>
+    <section id="contact">
+        <main class="container">
+            <div class="wrapper fade-up">
+                <h2>Get In Touch</h2>
                 <form action="your-server-endpoint" method="POST">
                     <div class="name">
                         <div class="first-name">
-                        <input type="text" name="firstName" placeholder="First Name" required>
+                            <input type="text" name="firstName" placeholder="First Name" required>
                         </div>
-
                         <div class="last-name">
-                        <input type="text" name="lastName" placeholder="Last Name" required>
+                            <input type="text" name="lastName" placeholder="Last Name" required>
                         </div>
                     </div>
-
                     <div class="email">
                         <input type="email" name="email" placeholder="Email" required>
                     </div>
-
                     <div class="message">
                         <textarea name="message" placeholder="Your Message" required></textarea>
                     </div>
-
-                    <button type="submit" id="send-button">Send Message</button>
+                    <button type="submit" id="send-button">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </form>
-                </div>
-            </main>
+            </div>
+        </main>
     </section>
 
+    <footer class="footer fade-up">
+        <p>Made with <span class="heart">❤️</span> in Sydney</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
