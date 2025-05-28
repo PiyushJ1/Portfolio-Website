@@ -29,7 +29,8 @@ html, body {
     height: 100%;
     margin: 0;
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 60px;
     overflow-y: auto;
     background: linear-gradient(-45deg, #000000, #0d1117, #161b22, #000000);
     background-size: 400% 400%;
@@ -41,7 +42,7 @@ html, body {
 
 section {
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
     padding: 100px 150px;
     min-height: 100vh;
     display: flex;
@@ -84,11 +85,13 @@ section {
     list-style: none;
 }
 
-.nav-icon {
+.nav-icon.home {
     width: 24px;
     height: 24px;
     cursor: none;
     filter: drop-shadow(0 0 1.5px white);
+    margin-bottom: 1.1rem;
+    margin-top: 1rem;
 }
 
 .nav-icon.github, .nav-icon.linkedin {
@@ -96,6 +99,7 @@ section {
     height: 20px;
     margin-left: 0;
     margin-top: 0;
+    filter: drop-shadow(0 0 1.5px white);
 }
 
 .nav-links {
@@ -1519,6 +1523,51 @@ button.error {
         gap: 15px;
         padding: 0.5rem;
     }
+}
+
+/* Modern Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    cursor: none;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+    border-radius: 5px;
+    cursor: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 136, 0.2);
+    border-radius: 5px;
+    border: 2px solid var(--secondary-color);
+    transition: background 0.3s ease;
+    cursor: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 136, 0.4);
+}
+
+/* Firefox scrollbar styles */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 136, 0.2) var(--secondary-color);
+}
+
+/* For when the scrollbar corner is visible */
+::-webkit-scrollbar-corner {
+    background: var(--secondary-color);
+    cursor: none;
+}
+
+/* Ensure scrollbar elements maintain custom cursor */
+::-webkit-scrollbar *,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+    cursor: none !important;
 }
 
 
