@@ -134,10 +134,8 @@ function initSmoothScrolling() {
             
             if (target) {
                 console.log('Target found:', targetId);
-                // Add offset for navbar height
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const offset = navbarHeight + 20; // Add some extra padding
-                const targetPosition = target.offsetTop - offset;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
                 
                 window.scrollTo({
                     top: targetPosition,
