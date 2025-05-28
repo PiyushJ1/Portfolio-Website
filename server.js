@@ -7,12 +7,10 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(cors({
-    origin: 'https://www.piyushj.dev'
+    origin: 'https://wonderful-dusk-14fdb6.netlify.app/'
 }));
 app.use(express.json());
 app.use(express.static('public'));
-
-
 
 app.post('/send-message', async (req, res) => {
     console.log('Incoming message:', req.body);
