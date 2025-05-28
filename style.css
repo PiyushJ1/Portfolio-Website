@@ -550,7 +550,7 @@ button:hover::before {
 }
 
 .project-card {
-    cursor: pointer;
+    cursor: default;
     background: rgba(13, 17, 23, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 255, 136, 0.2);
@@ -1086,7 +1086,7 @@ button.error {
 
 /* Updated project card animations */
 .project-card {
-    cursor: pointer;
+    cursor: default;
     background: rgba(13, 17, 23, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 255, 136, 0.2);
@@ -1588,7 +1588,7 @@ button.error {
 }
 
 /* Cursor styles for all clickable elements */
-button, .project-card, .scroll-down, .project-link, .social-link {
+button, .scroll-down, .project-link, .social-link {
     cursor: pointer;
 }
 
@@ -1608,11 +1608,16 @@ input, textarea {
 }
 
 /* Project card links */
-.project-links a {
+.project-links a, .project-link {
     color: var(--text-primary);
     font-size: 1.2rem;
     transition: all 0.3s ease;
     cursor: pointer;
+}
+
+.project-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
 /* Scroll down arrow */
@@ -1634,7 +1639,7 @@ input, textarea {
 
 /* Project cards */
 .project-card {
-    cursor: pointer;
+    cursor: default;
     background: rgba(13, 17, 23, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 255, 136, 0.2);
