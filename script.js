@@ -24,32 +24,29 @@ window.testNavigation = testNavigation;
 // Check if device is mobile
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
 
-// Custom cursor effect (only for desktop)
+// Parallax effect for project cards (only on desktop)
 if (!isMobile) {
-    const cursor = document.querySelector('.cursor');
-    const cursorFollower = document.querySelector('.cursor-follower');
-
-    document.addEventListener('mousemove', e => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+    const projectCards = document.querySelectorAll('.project-card');
+    window.addEventListener('mousemove', e => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
         
-        setTimeout(() => {
-            cursorFollower.style.left = e.clientX + 'px';
-            cursorFollower.style.top = e.clientY + 'px';
-        }, 100);
+        projectCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const cardX = rect.left + rect.width / 2;
+            const cardY = rect.top + rect.height / 2;
+            
+            const angleX = (mouseY - cardY) / 30;
+            const angleY = (mouseX - cardX) / -30;
+            
+            card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateZ(10px)`;
+        });
     });
 
-    // Hover effect for interactive elements
-    const hoverElements = document.querySelectorAll('a, button, .project-card');
-    hoverElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            cursor.classList.add('cursor-hover');
-            cursorFollower.classList.add('cursor-hover');
-        });
-        
-        element.addEventListener('mouseleave', () => {
-            cursor.classList.remove('cursor-hover');
-            cursorFollower.classList.remove('cursor-hover');
+    // Reset card transform on mouse leave
+    projectCards.forEach(card => {
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
         });
     });
 }
@@ -179,33 +176,6 @@ document.addEventListener('click', function(e) {
         }
     }
 });
-
-// Parallax effect for project cards (only on desktop)
-if (!isMobile) {
-    const projectCards = document.querySelectorAll('.project-card');
-    window.addEventListener('mousemove', e => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        
-        projectCards.forEach(card => {
-            const rect = card.getBoundingClientRect();
-            const cardX = rect.left + rect.width / 2;
-            const cardY = rect.top + rect.height / 2;
-            
-            const angleX = (mouseY - cardY) / 30;
-            const angleY = (mouseX - cardX) / -30;
-            
-            card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateZ(10px)`;
-        });
-    });
-
-    // Reset card transform on mouse leave
-    projectCards.forEach(card => {
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
-        });
-    });
-}
 
 // Touch handling for mobile project cards
 if (isMobile) {

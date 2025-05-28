@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -29,7 +28,7 @@ html, body {
     height: 100%;
     margin: 0;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-padding-top: 60px;
     overflow-y: auto;
     background: linear-gradient(-45deg, #000000, #0d1117, #161b22, #000000);
@@ -38,11 +37,27 @@ html, body {
     overflow-x: hidden;
     font-family: 'Roboto Mono', monospace;
     color: var(--text-primary);
+    position: relative;
+}
+
+/* Add a subtle blur overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
+    z-index: -1;
+    opacity: 0.4;
+    pointer-events: none;
 }
 
 section {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
     padding: 100px 150px;
     min-height: 100vh;
     display: flex;
@@ -72,6 +87,7 @@ section {
     font-weight: bold;
     font-family: 'Roboto Mono', monospace;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 .navbar a:hover {
@@ -88,18 +104,19 @@ section {
 .nav-icon.home {
     width: 24px;
     height: 24px;
-    cursor: none;
-    filter: drop-shadow(0 0 1.5px white);
+    filter: drop-shadow(0 0 1px white);
     margin-bottom: 1.1rem;
-    margin-top: 1rem;
+    margin-top: 1.3rem;
+    cursor: pointer;
 }
 
 .nav-icon.github, .nav-icon.linkedin {
     width: 20px;
     height: 20px;
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 0.4rem;
     filter: drop-shadow(0 0 1.5px white);
+    cursor: pointer;
 }
 
 .nav-links {
@@ -113,6 +130,7 @@ section {
 .nav-links a {
     position: relative;
     padding-bottom: 5px;
+    cursor: pointer;
 }
 
 .nav-links a::after {
@@ -249,7 +267,7 @@ section {
     opacity: 0;
     transition: transform 0.2s;
     position: relative;
-    cursor: none;
+    cursor: pointer;
 }
 
 .scroll-down img {
@@ -328,8 +346,9 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem 2rem;
+    padding: 5rem 2rem 2rem 2rem;
     width: 100%;
+    flex: 1;
 }
 
 .wrapper {
@@ -379,6 +398,7 @@ section {
 }
 
 input, textarea {
+    cursor: text;
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(0, 255, 136, 0.2);
@@ -411,6 +431,7 @@ textarea {
 }
 
 button {
+    cursor: pointer;
     width: 100%;
     background: transparent;
     color: var(--accent-color);
@@ -420,7 +441,6 @@ button {
     font-size: 1rem;
     font-family: 'Roboto Mono', monospace;
     font-weight: 500;
-    cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -530,12 +550,13 @@ button:hover::before {
 }
 
 .project-card {
+    cursor: pointer;
     background: rgba(13, 17, 23, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 255, 136, 0.2);
     border-radius: 8px;
     padding: 25px;
-    transition: none;
+    transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
     opacity: 0;
@@ -580,6 +601,7 @@ button:hover::before {
 }
 
 .project-tech-item {
+    cursor: default;
     color: var(--accent-color);
     font-size: 0.8rem;
     background: rgba(100, 255, 218, 0.1);
@@ -657,6 +679,7 @@ button:hover::before {
 }
 
 .skills-list li {
+    cursor: default;
     position: relative;
     padding-left: 25px;
     color: var(--text-secondary);
@@ -716,6 +739,7 @@ button:hover::before {
     z-index: 9999;
     transition: transform 0.2s ease;
     mix-blend-mode: difference;
+    opacity: 1;
 }
 
 .cursor-follower {
@@ -728,6 +752,7 @@ button:hover::before {
     z-index: 9998;
     transition: transform 0.6s ease;
     mix-blend-mode: difference;
+    opacity: 1;
 }
 
 .cursor-hover {
@@ -838,7 +863,7 @@ button:hover::before {
 
 /* Hide default cursor on specific elements */
 a, button, input, textarea {
-    cursor: none !important;
+    cursor: none;
 }
 
 /* Modern intro section */
@@ -877,6 +902,7 @@ a, button, input, textarea {
     color: var(--text-primary);
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .project-link:hover {
@@ -1024,11 +1050,13 @@ button.error {
 /* Footer styling */
 .footer {
     scroll-snap-align: none;
-    background: rgba(0, 0, 0, 0.95);
-    padding: 2rem 0;
+    background: transparent;
+    padding: 1rem 0 0.5rem 0;
     text-align: center;
     border-top: 1px solid rgba(0, 255, 136, 0.2);
-    margin-top: 3rem;
+    margin-top: 10rem;
+    margin-bottom: 0;
+    width: 100%;
 }
 
 .footer p {
@@ -1058,12 +1086,13 @@ button.error {
 
 /* Updated project card animations */
 .project-card {
+    cursor: pointer;
     background: rgba(13, 17, 23, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 255, 136, 0.2);
     border-radius: 8px;
     padding: 25px;
-    transition: none;
+    transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
     opacity: 0;
@@ -1529,13 +1558,11 @@ button.error {
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-    cursor: none;
 }
 
 ::-webkit-scrollbar-track {
     background: var(--secondary-color);
     border-radius: 5px;
-    cursor: none;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1543,7 +1570,6 @@ button.error {
     border-radius: 5px;
     border: 2px solid var(--secondary-color);
     transition: background 0.3s ease;
-    cursor: none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -1559,15 +1585,89 @@ button.error {
 /* For when the scrollbar corner is visible */
 ::-webkit-scrollbar-corner {
     background: var(--secondary-color);
-    cursor: none;
 }
 
-/* Ensure scrollbar elements maintain custom cursor */
-::-webkit-scrollbar *,
-::-webkit-scrollbar-thumb,
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner {
-    cursor: none !important;
+/* Cursor styles for all clickable elements */
+button, .project-card, .scroll-down, .project-link, .social-link {
+    cursor: pointer;
 }
+
+/* Input cursor styles */
+input, textarea {
+    cursor: text;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    color: var(--text-primary);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+/* Project card links */
+.project-links a {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Scroll down arrow */
+.scroll-down {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    animation: fade 1s ease-in forwards 4s, bounce 2s infinite 5s;
+    opacity: 0;
+    transition: transform 0.2s;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Form button */
+#send-button {
+    cursor: pointer;
+}
+
+/* Project cards */
+.project-card {
+    cursor: pointer;
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+/* Skills list items */
+.skills-list li {
+    position: relative;
+    padding-left: 25px;
+    color: var(--text-secondary);
+    cursor: default;
+}
+
+/* Project tech items */
+.project-tech-item {
+    cursor: default;
+}
+
+/* Contact section adjustments */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+
 
 
