@@ -304,3 +304,25 @@ if (isMobile) {
         e.preventDefault();
     });
 }
+
+// Control running line visibility
+const runningLine = document.querySelector('.running-line');
+const homeSection = document.querySelector('#home');
+
+function updateRunningLineVisibility() {
+    if (homeSection) {
+        const homeSectionRect = homeSection.getBoundingClientRect();
+        const isInHomeSection = homeSectionRect.top <= 60 && homeSectionRect.bottom >= 0;
+        
+        if (!isInHomeSection) {
+            runningLine.classList.add('hidden');
+        } else {
+            runningLine.classList.remove('hidden');
+        }
+    }
+}
+
+window.addEventListener('scroll', updateRunningLineVisibility);
+window.addEventListener('resize', updateRunningLineVisibility);
+// Initial check
+updateRunningLineVisibility();

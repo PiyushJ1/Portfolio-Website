@@ -30,7 +30,7 @@ html, body {
     margin: 0;
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
-    overflow-y: scroll;
+    overflow-y: auto;
     background: linear-gradient(-45deg, #000000, #0d1117, #161b22, #000000);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
@@ -41,6 +41,7 @@ html, body {
 
 section {
     scroll-snap-align: start;
+    scroll-snap-stop: normal;
     padding: 100px 150px;
     min-height: 100vh;
     display: flex;
@@ -319,8 +320,6 @@ section {
     }
 }
 
-/* CONTACT SECTION */
-
 .container {
     display: flex;
     justify-content: center;
@@ -531,7 +530,7 @@ button:hover::before {
     border: 1px solid rgba(0, 255, 136, 0.2);
     border-radius: 8px;
     padding: 25px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
     opacity: 0;
@@ -543,23 +542,11 @@ button:hover::before {
     transform: translateY(0);
 }
 
-/* Staggered animation for project cards */
-.project-card:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.project-card:nth-child(2) {
-    transition-delay: 0.3s;
-}
-
-.project-card:nth-child(3) {
-    transition-delay: 0.5s;
-}
-
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     border-color: var(--accent-color);
+    transition: all 0.1s ease-in;
 }
 
 .project-title {
@@ -1031,6 +1018,7 @@ button.error {
 
 /* Footer styling */
 .footer {
+    scroll-snap-align: none;
     background: rgba(0, 0, 0, 0.95);
     padding: 2rem 0;
     text-align: center;
@@ -1063,18 +1051,6 @@ button.error {
     70% { transform: scale(1); }
 }
 
-/* Remove old fade animation */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Updated project card animations */
 .project-card {
     background: rgba(13, 17, 23, 0.8);
@@ -1082,7 +1058,7 @@ button.error {
     border: 1px solid rgba(0, 255, 136, 0.2);
     border-radius: 8px;
     padding: 25px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
     opacity: 0;
@@ -1094,23 +1070,11 @@ button.error {
     transform: translateY(0);
 }
 
-/* Staggered animation for project cards */
-.project-card:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.project-card:nth-child(2) {
-    transition-delay: 0.3s;
-}
-
-.project-card:nth-child(3) {
-    transition-delay: 0.5s;
-}
-
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     border-color: var(--accent-color);
+    transition: all 0.2s ease;
 }
 
 /* Alternative: Slide in from sides */
@@ -1486,6 +1450,73 @@ button.error {
     /* Prevent zoom on inputs */
     input, textarea {
         font-size: 16px !important;
+    }
+}
+
+.running-line {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--secondary-color);
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid rgba(0, 255, 136, 0.2);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.running-line.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.running-text {
+    display: inline-block;
+    color: var(--accent-color);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    padding: 8px 0;
+    animation: runningLine 25s linear infinite;
+    width: max-content;
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+}
+
+.running-text span {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+@keyframes runningLine {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .running-line {
+        top: 52px;
+    }
+    
+    .running-text {
+        font-size: 0.8rem;
+        padding: 6px 0;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        padding: 0.5rem;
     }
 }
 
