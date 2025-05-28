@@ -208,7 +208,13 @@ if (form) {
             const data = Object.fromEntries(formData.entries());
             
             // Simulate sending (replace with actual endpoint)
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await fetch('https://portfolio-backend-production-0a2b.up.railway.app/send-message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
             
             button.innerHTML = '<span>Sent!</span><i class="fas fa-check"></i>';
             button.classList.add('success');
