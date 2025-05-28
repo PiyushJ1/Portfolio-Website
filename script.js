@@ -51,16 +51,15 @@ if (!isMobile) {
     });
 }
 
-// Typing effect with glitch
+// glitch typing effect
 const glitchText = document.querySelector('.glitch');
 if (glitchText) {
     const originalText = glitchText.textContent;
     glitchText.textContent = '';
     glitchText.classList.add('typing');
     
-    // Typing animation
     let i = 0;
-    const typeSpeed = 150; // Milliseconds per character
+    const typeSpeed = 150; // ms per character
     
     function typeWriter() {
         if (i < originalText.length) {
@@ -68,12 +67,11 @@ if (glitchText) {
             i++;
             setTimeout(typeWriter, typeSpeed);
         } else {
-            // Typing complete, start glitch effect
+            // start glitch effect after typing is done
             setTimeout(() => {
                 glitchText.classList.remove('typing');
                 glitchText.classList.add('typing-complete');
                 
-                // Start glitch interval after typing is done
                 setInterval(() => {
                     glitchText.classList.add('glitch-effect');
                     setTimeout(() => {
@@ -84,16 +82,14 @@ if (glitchText) {
         }
     }
     
-    // Start typing after a brief delay
     setTimeout(() => {
         typeWriter();
     }, 1000);
 }
 
-// Enhanced Intersection Observer for scroll animations
 const observerOptions = {
     root: null,
-    threshold: isMobile ? 0.05 : 0.1, // Lower threshold for mobile
+    threshold: isMobile ? 0.05 : 0.1,
     rootMargin: isMobile ? '0px 0px -20px 0px' : '0px 0px -50px 0px'
 };
 
@@ -102,7 +98,6 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
         } else {
-            // Optional: Remove class to re-trigger animation when scrolling back up
             entry.target.classList.remove('in-view');
         }
     });
@@ -116,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Smooth scrolling for navigation links
+// smooth scrolling for navigation links
 function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
     console.log('Found navigation links:', navLinks.length);
@@ -145,23 +140,22 @@ function initSmoothScrolling() {
     });
 }
 
-// Initialize smooth scrolling when DOM is ready
+// initialise smooth scrolling if DOM has loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initSmoothScrolling);
 } else {
     initSmoothScrolling();
 }
 
-// Additional fallback for navigation
+// fallback for navigation
 document.addEventListener('click', function(e) {
-    // Check if clicked element is a navigation link
+    // check if clicked element is a navigation link
     if (e.target.closest('a[href^="#"]')) {
         const link = e.target.closest('a[href^="#"]');
         const href = link.getAttribute('href');
         
         console.log('Fallback navigation triggered for:', href);
         
-        // Only handle internal navigation links
         if (href.startsWith('#') && href.length > 1) {
             e.preventDefault();
             
@@ -177,7 +171,7 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Touch handling for mobile project cards
+// touch handling for mobile project cards
 if (isMobile) {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
@@ -191,50 +185,6 @@ if (isMobile) {
     });
 }
 
-// Form submission handling with modern feedback
-const form = document.querySelector('form');
-if (form) {
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const button = document.querySelector('#send-button');
-        const originalText = button.innerHTML;
-        
-        try {
-            button.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
-            button.disabled = true;
-            
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Simulate sending (replace with actual endpoint)
-            await fetch('https://portfolio-backend-production-0a2b.up.railway.app/send-message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-            
-            button.innerHTML = '<span>Sent!</span><i class="fas fa-check"></i>';
-            button.classList.add('success');
-            form.reset();
-            
-        } catch (error) {
-            console.error('Error:', error);
-            button.innerHTML = '<span>Error!</span><i class="fas fa-exclamation-circle"></i>';
-            button.classList.add('error');
-        } finally {
-            setTimeout(() => {
-                button.innerHTML = originalText;
-                button.disabled = false;
-                button.classList.remove('success', 'error');
-            }, 3000);
-        }
-    });
-}
-
-// Navbar scroll effect (improved for mobile)
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
@@ -246,15 +196,14 @@ window.addEventListener('scroll', () => {
         return;
     }
     
-    // On mobile, hide navbar more aggressively while scrolling down
     const threshold = isMobile ? 10 : 50;
     
     if (currentScroll > lastScroll && currentScroll > threshold && !navbar.classList.contains('scroll-down')) {
-        // Scroll Down
+        // scroll down
         navbar.classList.remove('scroll-up');
         navbar.classList.add('scroll-down');
     } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
-        // Scroll Up
+        // scroll up
         navbar.classList.remove('scroll-down');
         navbar.classList.add('scroll-up');
     }
@@ -300,3 +249,46 @@ window.addEventListener('scroll', updateRunningLineVisibility);
 window.addEventListener('resize', updateRunningLineVisibility);
 // Initial check
 updateRunningLineVisibility();
+
+// send message request to backend server
+const form = document.querySelector('form');
+if (form) {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const button = document.querySelector('#send-button');
+        const originalText = button.innerHTML;
+        
+        try {
+            button.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+            button.disabled = true;
+            
+            // get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // fetch request from backend server endpoint
+            await fetch('https://portfolio-backend-production-0a2b.up.railway.app/send-message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            
+            button.innerHTML = '<span>Sent!</span><i class="fas fa-check"></i>';
+            button.classList.add('success');
+            form.reset();
+            
+        } catch (error) {
+            console.error('Error:', error);
+            button.innerHTML = '<span>Error!</span><i class="fas fa-exclamation-circle"></i>';
+            button.classList.add('error');
+        } finally {
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+                button.classList.remove('success', 'error');
+            }, 3000);
+        }
+    });
+}
