@@ -474,7 +474,8 @@ button:hover::before {
     animation: float 4s ease-in-out infinite;
     max-width: 280px;
     width: 100%;
-    margin-left: 15rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
 }
 
 .about-image img {
