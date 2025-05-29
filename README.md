@@ -20,7 +20,7 @@ The website features a clean, responsive design with three main sections:
 
 - **About:** Brief introduction and background.
 - **Projects:** Showcase of completed work and portfolio items.
-- **Contact Me:** A form allowing visitors to send messages directly to the backend API.
+- **Contact:** A form allowing visitors to send messages directly to the backend API.
 
 The contact form collects user inputs and submits them via a POST request to the backend `/send-message` endpoint.
 
