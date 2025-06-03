@@ -508,6 +508,7 @@ button:hover::before {
     object-fit: cover;
     transition: all 0.3s ease;
     border-radius: 10px;
+    filter: none;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     border: 2px solid var(--accent-color);
 }
