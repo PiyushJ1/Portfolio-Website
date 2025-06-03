@@ -506,7 +506,6 @@ button:hover::before {
     height: auto;
     max-height: 320px;
     object-fit: cover;
-    filter: grayscale(100%) contrast(1);
     transition: all 0.3s ease;
     border-radius: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
@@ -1055,7 +1054,7 @@ button.error {
     text-align: center;
     border-top: 1px solid rgba(0, 255, 136, 0.2);
     margin-top: 10rem;
-    margin-bottom: 0;
+    margin-bottom: -5rem;
     width: 100%;
 }
 
@@ -1092,7 +1091,7 @@ button.error {
     border: 1px solid rgba(0, 255, 136, 0.2);
     border-radius: 8px;
     padding: 25px;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
     position: relative;
     overflow: hidden;
     opacity: 0;
@@ -1108,7 +1107,7 @@ button.error {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     border-color: var(--accent-color);
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 /* Alternative: Slide in from sides */
@@ -1271,7 +1270,7 @@ button.error {
     
     /* Contact Section */
     .wrapper {
-        padding: 2rem;
+        padding: 1rem;
         margin: 0 1rem;
         width: calc(100% - 2rem);
     }
