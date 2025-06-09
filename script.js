@@ -1,6 +1,3 @@
-console.log('Script loaded successfully');
-
-// Test function to manually test navigation
 function testNavigation() {
     console.log('Testing navigation...');
     const aboutSection = document.querySelector('#about');
@@ -13,7 +10,6 @@ function testNavigation() {
     
     // Test scroll to about section
     if (aboutSection) {
-        console.log('About section found, testing scroll...');
         aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
 }
@@ -72,6 +68,31 @@ if (glitchText) {
                 glitchText.classList.remove('typing');
                 glitchText.classList.add('typing-complete');
                 
+                // Trigger fade-in animations for post-text and descriptions
+                const postText = document.querySelector('.post-text');
+                const desc1 = document.querySelector('.desc1');
+                const desc2 = document.querySelector('.desc2');
+                
+                // Fade in post-text first
+                if (postText) {
+                    setTimeout(() => {
+                        postText.classList.add('fade-in');
+                    }, 200);
+                }
+                
+                // Fade in descriptions after post-text completes (post-text takes 0.8s to fade in)
+                if (desc1) {
+                    setTimeout(() => {
+                        desc1.classList.add('fade-in');
+                    }, 1200); // 200ms + 800ms (post-text animation) + 200ms gap
+                }
+                
+                if (desc2) {
+                    setTimeout(() => {
+                        desc2.classList.add('fade-in');
+                    }, 1600); // 1200ms + 400ms stagger
+                }
+                
                 setInterval(() => {
                     glitchText.classList.add('glitch-effect');
                     setTimeout(() => {
@@ -114,18 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // smooth scrolling for navigation links
 function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    console.log('Found navigation links:', navLinks.length);
+    // console.log('Found navigation links:', navLinks.length);
     
     navLinks.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            console.log('Navigation clicked:', this.getAttribute('href'));
+            // console.log('Navigation clicked:', this.getAttribute('href'));
             
             const targetId = this.getAttribute('href');
             const target = document.querySelector(targetId);
             
             if (target) {
-                console.log('Target found:', targetId);
+                // console.log('Target found:', targetId);
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
                 
@@ -134,7 +155,7 @@ function initSmoothScrolling() {
                     behavior: 'smooth'
                 });
             } else {
-                console.log('Target not found:', targetId);
+                // console.log('Target not found:', targetId);
             }
         });
     });
@@ -154,14 +175,14 @@ document.addEventListener('click', function(e) {
         const link = e.target.closest('a[href^="#"]');
         const href = link.getAttribute('href');
         
-        console.log('Fallback navigation triggered for:', href);
+        // console.log('Fallback navigation triggered for:', href);
         
         if (href.startsWith('#') && href.length > 1) {
             e.preventDefault();
             
             const target = document.querySelector(href);
             if (target) {
-                console.log('Fallback: scrolling to', href);
+                // console.log('Fallback: scrolling to', href);
                 target.scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'
