@@ -219,7 +219,7 @@ section {
     line-height: 1.2;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.8s ease;
+    transition: all 0.6s ease;
 }
 
 .post-text.fade-in {
@@ -247,6 +247,10 @@ section {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.6s;
+}
+
+.desc1 {
+    margin-bottom: 0.3rem;
 }
 
 @keyframes cursor-blink {
