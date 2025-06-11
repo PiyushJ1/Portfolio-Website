@@ -288,7 +288,7 @@ if (form) {
             const data = Object.fromEntries(formData.entries());
             
             // fetch request from backend server endpoint
-            await fetch('https://portfolio-backend-2vtg.onrender.com//send-message', {
+            await fetch('https://portfolio-backend-production-0a2b.up.railway.app/send-message', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
