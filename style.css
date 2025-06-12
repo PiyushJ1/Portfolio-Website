@@ -102,11 +102,12 @@ section {
 }
 
 .nav-icon.home {
-    width: 24px;
-    height: 24px;
-    filter: drop-shadow(0 0 1px white);
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 0.8px white);
     margin-bottom: 1.1rem;
     margin-top: 1.3rem;
+    margin-right: -0.4rem;
     cursor: pointer;
 }
 
