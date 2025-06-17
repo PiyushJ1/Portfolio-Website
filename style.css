@@ -28,7 +28,7 @@ html, body {
     height: 100%;
     margin: 0;
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
+/*     scroll-snap-type: y proximity; */
     scroll-padding-top: 60px;
     overflow-y: auto;
     background: linear-gradient(-45deg, #000000, #0d1117, #161b22, #000000);
@@ -56,8 +56,8 @@ body::before {
 }
 
 section {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
+/*     scroll-snap-align: start; */
+/*     scroll-snap-stop: normal; */
     padding: 100px 150px;
     min-height: 100vh;
     display: flex;
