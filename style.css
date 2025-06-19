@@ -623,7 +623,7 @@ button:hover::before {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     border-color: var(--accent-color);
-    transition: all 0.1s ease;
+    transition: border-color 0s;
 }
 
 .project-title {
