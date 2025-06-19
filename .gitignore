@@ -1,0 +1,5 @@
+# ignore vscode settings
+.vscode/
+
+# ignore node_modules in backend directory
+backend/node_modules/
