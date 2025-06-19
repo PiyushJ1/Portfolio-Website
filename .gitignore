@@ -2,4 +2,4 @@
 .vscode/
 
 # ignore node_modules in backend directory
-backend/node_modules/
+/backend/node_modules/
