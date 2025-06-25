@@ -1,7 +1,7 @@
-# ✅ Personal Portfolio Checklist (2nd-Year Student Edition)
+# ✅ Personal Portfolio Checklist
 
 ## 🔹 Hero Section
-- [ ] Add name and title (e.g. “Computer Science Student & Aspiring Developer”)
+- [ ] Add name and title (e.g. "Software Engineering Student & Aspiring Developer”)
 - [ ] Write 1-sentence value pitch
 - [ ] Add CTA button (e.g. “View Projects”)
 
