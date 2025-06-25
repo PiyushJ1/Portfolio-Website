@@ -119,15 +119,12 @@ document.addEventListener('click', function(e) {
     if (e.target.closest('a[href^="#"]')) {
         const link = e.target.closest('a[href^="#"]');
         const href = link.getAttribute('href');
-        
-        // console.log('Fallback navigation triggered for:', href);
-        
+                
         if (href.startsWith('#') && href.length > 1) {
             e.preventDefault();
             
             const target = document.querySelector(href);
             if (target) {
-                // console.log('Fallback: scrolling to', href);
                 target.scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'
