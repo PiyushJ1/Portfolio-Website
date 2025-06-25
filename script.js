@@ -1,22 +1,3 @@
-function testNavigation() {
-    console.log('Testing navigation...');
-    const aboutSection = document.querySelector('#about');
-    const projectsSection = document.querySelector('#projects');
-    const contactSection = document.querySelector('#contact');
-    
-    console.log('About section:', aboutSection);
-    console.log('Projects section:', projectsSection);
-    console.log('Contact section:', contactSection);
-    
-    // Test scroll to about section
-    if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// Add test function to window for debugging
-window.testNavigation = testNavigation;
-
 // Check if device is mobile
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
 
@@ -131,42 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 });
-
-// smooth scrolling for navigation links
-function initSmoothScrolling() {
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    // console.log('Found navigation links:', navLinks.length);
-    
-    navLinks.forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            // console.log('Navigation clicked:', this.getAttribute('href'));
-            
-            const targetId = this.getAttribute('href');
-            const target = document.querySelector(targetId);
-            
-            if (target) {
-                // console.log('Target found:', targetId);
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            } else {
-                // console.log('Target not found:', targetId);
-            }
-        });
-    });
-}
-
-// initialise smooth scrolling if DOM has loaded
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSmoothScrolling);
-} else {
-    initSmoothScrolling();
-}
 
 // fallback for navigation
 document.addEventListener('click', function(e) {
