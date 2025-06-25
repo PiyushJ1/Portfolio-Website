@@ -596,6 +596,33 @@ button:hover::before {
     opacity: 0.7;
 }
 
+#contact {
+    text-align: center;
+}
+
+.contact-section-title {
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+.contact-section-title::before {
+    content: '<';
+    color: var(--accent-color);
+    margin-right: 10px;
+    opacity: 0.7;
+}
+
+.contact-section-title::after {
+    content: '/>';
+    color: var(--accent-color);
+    margin-left: 10px;
+    opacity: 0.7;
+}
+
 /* Projects Section Styles */
 .projects-grid {
     display: grid;
