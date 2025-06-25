@@ -1593,7 +1593,7 @@ button.error {
     font-family: 'Roboto Mono', monospace;
     font-size: 0.9rem;
     padding: 8px 0;
-    animation: runningLine 25s linear infinite;
+    animation: runningLine 13s linear infinite;
     width: max-content;
     text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
 }
