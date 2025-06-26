@@ -56,8 +56,6 @@ body::before {
 }
 
 section {
-/*     scroll-snap-align: start; */
-/*     scroll-snap-stop: normal; */
     padding: 100px 150px;
     min-height: 100vh;
     display: flex;
